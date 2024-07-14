@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #frm {
+            margin-top: 200px;
+            text-align: center;
+        }
+
+        .checkbox-container {
+            display: flex;
+            margin-left: 500px;
+            margin-top: 10px;
+        }
+
+        #check {
+            margin-right: 10px;
+        }
+
+        #id, #password, #login {
+            width: 400px;
+            height: 40px;
+            border-radius: 7px;
+            border: none;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        #id, #password {
+            background-color: gainsboro;
+        }
+
+        #login {
+            background-color: deepskyblue;
+            color: white;
+            cursor: pointer;
+        }
+
+        #login:hover {
+            background-color: rgb(0, 172, 229);
+        }
+
+        h1 {
+            color: deepskyblue;
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form id="frm">
+        <h1>부마장터</h1>
+        <input type="text" id="id" placeholder="아이디를 입력해주세요">
+        <br><br>
+
+        <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
+        <br>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="check">
+            <label for="check">로그인 상태 유지</label>
+        </div>
+        <br>
+
+        <input type="button" id="login" value="로그인" onclick="login_ok()">
+
+    </form>
+
+    <script>
+        function login_ok() {
+            let name = document.getElementById('id').value;
+            let password = document.getElementById('password').value;
+            let check = document.getElementById('check');
+
+            if (check.checked) {
+                localStorage.setItem("check_login_keep", 1);
+            } else {
+                localStorage.setItem("check_login_keep", 0);
+            }
+
+            if (name === 'admin' && password === '1234') {
+                localStorage.setItem('user_name', name);
+                localStorage.setItem("check_login", 1);
+                alert("로그인 성공!");
+                location.href = '/Users/yanghyojun/Desktop/project/mainpage.html';
+            } else {
+                alert("아이디 또는 비밀번호가 잘못되었습니다!");
+                location.href = '/Users/yanghyojun/Desktop/project/login.html';
+            }
+        }
+    </script>
+
+</body>
+</html>

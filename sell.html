@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>판매하기</title>
+</head>
+<style>
+    
+</style>
+
+<body>
+    <br>
+    <button onclick="plus_img()" id="plut_img">사진 추가하기</button><br><br>
+
+    <p>제목</p>
+    <input type="text" id="title_c">
+
+    <p>가격</p>
+    <input type="text" id="price_c">
+
+    <p>카테고리</p>
+    <select id="category_c">
+        <option value="select" selected>==선택==</option>
+        <option value="jooggo">중고거래</option>
+        <option value="book">책거래</option>
+        <option value="outsourcing">외주</option>
+    </select>
+    <br><br><br>
+
+    <button id="submit" onclick="submitForm()">완료</button>
+    
+    <script>
+        function plus_img() {
+            alert('구현되지 않은 기능입니다!');
+        }
+
+        function submitForm() {
+            // 폼 필드 값을 가져옵니다
+            let title = document.getElementById('title_c').value;
+            let price = document.getElementById('price_c').value;
+            let category = document.getElementById('category_c').value;
+
+            // 유효성 검사
+            if (title === '') {
+                alert('제목을 입력해주세요');
+                document.getElementById('title_c').focus();
+            } else if (price === '') {
+                alert('가격을 입력해주세요');
+                document.getElementById('price_c').focus();
+            } else if (category === 'select') {
+                alert('카테고리를 선택해주세요');
+                document.getElementById('category_c').focus();
+            } else {
+                alert('완료되었습니다');
+                location.href = '/Users/yanghyojun/Desktop/project/mainpage.html';
+            }
+        }
+    </script>
+    
+</body>
+</html>

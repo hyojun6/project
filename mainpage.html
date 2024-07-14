@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>부마장터</title>
+
+<style>
+    .container {
+        width:100%;
+        margin: auto;
+    }
+
+    img {
+        float: left;
+    }
+
+    @media only screen and (min-width: 768px) {
+        container {
+            width: 50%;
+        }
+    }
+
+    #user_name {
+        font-weight: 500px;
+        margin-left: 650px;
+        float: left;
+        margin-top: 16px;
+    }
+
+
+    #var {
+        margin-top: -8px;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        background-color: white;
+    }
+    .pagelink {
+        font-weight: 500;
+        color: black;
+        margin-left: 60px;
+        float: left;
+        margin-top: 16px;
+        text-decoration-line: none;
+    }
+    .pagelink:hover {
+        color: gray;
+    }
+    .pagelink_logo {
+        margin-top: 15px;
+        margin-left: 150px;
+        float: left;
+        width: 80px;
+    }
+
+    #sell {
+        margin-left: 20px;
+        margin-top: 14px;
+    }
+
+
+    #hello {
+        width: 100%;
+        height: 700px;
+        background-color: rgb(251, 255, 205);
+    }
+    #nuri_img {
+        margin-right: 200px;
+        margin-top: -50px;
+        float: right;
+    }
+    #login {
+        margin-left: 285px;
+        padding: 8px 18px;
+        margin-top: -50px;
+        background-color: rgb(184, 224, 239);
+        border-radius: 12px;
+        border: none;
+        box-shadow: 1.5px 1.5px 1.5px black;
+        transition-duration: 0.3s;
+    }
+    #login:active {
+        margin-left: 295px;
+        box-shadow: none;
+    }
+    a {
+        text-decoration: none;
+        color : black;
+    }
+    a:hover {
+        color: gray;
+    }
+
+
+    #seeiteams {
+        width: 100%;
+        height: 700px;
+        background-color: whitesmoke;
+    }
+    #siexample {
+        margin-top: 15px;
+        margin-left: 320px;
+    }
+
+    #seebook {
+        width: 100%;
+        height: 700px;
+        background-color: antiquewhite;
+    }
+    #sbexample {
+        margin-top: 20px;
+        margin-right: 340px;
+        float: right;
+        width: 320px;
+    }
+
+    #see_outsourcing {
+        width: 100%;
+        height: 700px;
+        background-color: azure;
+    }
+    #sos {
+        margin-top: 65px;
+        margin-left: 280px;
+        width: 450px;
+    }
+    .img {
+        width: 400px;
+        height: auto;
+    }
+
+    </style>
+
+    <script>
+        window.onload = function() {
+            if(localStorage.getItem("check_login") == 1) {
+                let name = localStorage.getItem('user_name');
+                sessionStorage.setItem('user_name', name);
+                sessionStorage.setItem('check_login', 1);
+                document.getElementById('user_name').innerHTML = name + '님 환영합니다';
+                document.getElementById('login').innerHTML = '로그아웃';
+
+                if(localStorage.getItem('check_login_keep') != 1) {
+                    localStorage.removeItem("check_login");
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <div id="var">
+            <img class="pagelink_logo" src="/Users/yanghyojun/Desktop/vsc html/images/4_logo.png" alt="logo error">
+            <a href="/Users/yanghyojun/Desktop/project/jooggo.html" class="pagelink">중고거래</a>
+            <a href="/Users/yanghyojun/Desktop/project/book.html" class="pagelink">책</a>
+            <a href="/Users/yanghyojun/Desktop/project/outsourcing.html" class="pagelink">외주</a>
+            <p id="user_name"></p>
+            <button id="sell" onclick="sell()">판매하기</button>
+        </div>
+
+        <div id="hello">
+            <br><br><br><br><br><br><br><br>
+            <img src="/Users/yanghyojun/Desktop/vsc html/images/4_아리소리.png" alt="nuri" id="nuri_img">
+            <p style="margin-left: 250px; font-size: 60px; margin-bottom: 20px; font-weight: 450;">우리 학교의<br>중고 거래 플랫폼</p>
+            <p style="margin-left: 250px; font-size: 20px; margin-top: 10px; font-weight: 380; color: gray;">우리학교라서 가능한 모든 것<br>부마장터에서 함께해요.</p>
+            <button id="login" onclick="login()">로그인하기</button>
+            
+        </div>
+        
+
+        <div id="seeiteams">
+            <br><br><br><br><br><br><br><br><br>
+            <img src="/Users/yanghyojun/Downloads/중고거래이미지.jpg" alt="siexample" id="siexample" class="img">
+            <p style="margin-left: 820px; font-size: 17px; margin-bottom: 20px; color: rgb(249, 187, 62);">중고거래</p>
+            <p style="margin-left: 820px; font-size: 45px; margin-top: 15px; margin-bottom: 10px;">믿을만한<br>학생 간 중고거래</p>
+            <p style="margin-left: 820px; font-size: 25px; margin-top: 10px;">친구, 선·후배와 알뜰살뜰한 거래를<br>지금 경험해보세요.</p>
+
+        </div>
+
+        <div id="seebook">
+            <br><br><br><br><br><br><br><br><br>
+            <img src="/Users/yanghyojun/Downloads/책이미지.jpeg" alt="sbexample" id="sbexample" class="img">
+            <p style="margin-left: 320px; font-size: 17px; margin-bottom: 20px; color: rgb(249, 187, 62);">책</p>
+            <p style="margin-left: 320px; font-size: 45px; margin-top: 15px; margin-bottom: 10px;">앞길을 비춰주는<br>길잡이</p>
+            <p style="margin-left: 320px; font-size: 25px; margin-top: 10px;">새로운 공부를 위한 첫걸음<br>새로운 책과 함께하세요.</p>
+            
+        </div>
+
+        <div id="see_outsourcing">
+            <br><br><br><br><br><br><br><br><br>
+            <img src="/Users/yanghyojun/Downloads/외주이미지.jpg" alt="sos" id="sos" class="img">
+            <p style="margin-left: 820px; font-size: 17px; margin-bottom: 20px; color: rgb(249, 187, 62);">외주</p>
+            <p style="margin-left: 820px; font-size: 45px; margin-top: 15px; margin-bottom: 10px;">할 게 많을 땐?<br>외주 구하기</p>
+            <p style="margin-left: 820px; font-size: 25px; margin-top: 10px;">시간을 절약하는<br>효과적인 방법.</p>
+
+        </div>
+
+
+        
+
+    </div>
+    
+    <script>
+        let login_yes = localStorage.getItem('check_login');
+        let s_login_yes = sessionStorage.getItem('check_login');
+        function login() {
+            if(login_yes==0 || login_yes==1 || s_login_yes==1) {
+                localStorage.clear();
+                location.href = '/Users/yanghyojun/Desktop/project/mainpage.html';
+                sessionStorage.clear();
+            } else {
+                location.href = '/Users/yanghyojun/Desktop/project/login.html';
+            }
+        }
+
+        function sell() {
+            if(s_login_yes == 1 || login_yes == 1) {
+                location.href = '/Users/yanghyojun/Desktop/project/sell.html';
+
+            } else {
+                alert('먼저 로그인 해주세요')
+            }
+        }
+
+    </script>
+
+</body>
+</html>

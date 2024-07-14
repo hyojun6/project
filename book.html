@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부마장터</title>
+</head>
+<style>
+    .container {
+        width:100%;
+        margin: auto;
+    }
+    @media only screen and (min-width: 768px) {
+        container {
+            width: 50%;
+        }
+    }
+    #var {
+        margin-top: -8px;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        background-color: white;
+    }
+    #user_name {
+        font-weight: 500px;
+        margin-left: 650px;
+        float: left;
+        margin-top: 16px;
+    }
+
+    .pagelink {
+        font-weight: 500px;
+        color: black;
+        margin-left: 60px;
+        float: left;
+        margin-top: 16px;
+        text-decoration-line: none;
+    }
+    .pagelink:hover {
+        color: gray;
+    }
+    .pagelink_logo {
+        margin-top: 15px;
+        margin-left: 85px;
+        float: left;
+        width: 80px;
+    }
+
+    #seebook {
+        width: 100%;
+        height: 300px;
+        background-color: antiquewhite;
+    }
+    #sbexample {
+        
+        margin-right: 420px;
+        float: right;
+    }
+
+    #jooggolist 
+    {
+        background-color: blanchedalmond;
+        margin: auto;
+        width: 76%;
+        height: 1000px;
+    }
+
+    .line_1 {
+        margin-top: 25px;
+        background-color: beige;
+        margin-left: 2.5%;
+        width: 30%;
+        height: 300px;
+        float: left;
+        border-radius: 10%;
+    }
+    .list_img {
+        width: auto;
+        height: 150px;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .title {
+        margin-left: 60px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 25px;
+    }
+    .price {
+        margin-left: 60px;
+        margin-top: 5px;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .seller {
+        margin-left: 60px;
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    #booklist
+    {
+        background-color: blanchedalmond;
+        margin: auto;
+        width: 76%;
+        height: 1000px;
+    }
+
+    .line_1 {
+        margin-top: 25px;
+        background-color: beige;
+        margin-left: 2.5%;
+        width: 30%;
+        height: 300px;
+        float: left;
+        border-radius: 10%;
+    }
+    .list_img {
+        width: auto;
+        height: 150px;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .title {
+        margin-left: 60px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 25px;
+    }
+    .price {
+        margin-left: 60px;
+        margin-top: 5px;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .seller {
+        margin-left: 60px;
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+</style>
+
+<script>
+    window.onload = function() {
+        if(localStorage.getItem("check_login") == 1) {
+            let name = localStorage.getItem('user_name');
+            sessionStorage.setItem('user_name', name);
+            sessionStorage.setItem('check_login', 1);
+            document.getElementById('user_name').innerHTML = name + '님 환영합니다';
+            document.getElementById('login').innerHTML = '로그아웃';
+
+            if(localStorage.getItem('check_login_keep') != 1) {
+                localStorage.removeItem("check_login");
+            }
+        }
+    }
+</script>
+
+<body>
+    <div class="container">
+        <div id="var">
+            <a href="/Users/yanghyojun/Desktop/project/mainpage.html" height="5" width="10" target="_self">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/4_logo.png" alt="mainpage" class="pagelink_logo" style="margin-left: 150px;">
+            <a>
+            <a href="/Users/yanghyojun/Desktop/project/jooggo.html" class="pagelink">중고거래</a>
+            <a href="/Users/yanghyojun/Desktop/project/book.html" class="pagelink">책</a>
+            <a href="/Users/yanghyojun/Desktop/project/outsourcing.html" class="pagelink">외주</a>
+            <p id="user_name"></p>
+        </div>
+
+        <div id="seebook">
+            <br><br><br>
+            <img src="/Users/yanghyojun/Downloads/책이미지.jpeg" alt="sbexample" id="sbexample">
+            <p style="margin-left: 380px; font-size: 35px; margin-top: 15px; margin-bottom: 10px; line-height: 1.5; font-weight: 600;">앞길을 비춰주는<br>길잡이</p>
+            <p style="margin-left: 380px; font-size: 20px; margin-top: 10px;">새로운 공부를 위한 첫걸음<br>새로운 책과 함께하세요.</p>
+        
+        </div>
+
+        <p style="text-align: center; font-size: 40px; font-weight: 500; margin-top: 50px;">중고책</p>
+
+        <div id="booklist">
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_비전공자책.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">비전공자를 위한 it책</p>
+                <p class="price">9000원</p>
+                <p class="seller">양효준</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_상대성이론책.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">상대성이론책</p>
+                <p class="price">10000원</p>
+                <p class="seller">user1</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_아두이노책.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">아두이노(기초)</p>
+                <p class="price">8000원</p>
+                <p class="seller">user2</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_영단어책.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">기본 영어단어</p>
+                <p class="price">6000원</p>
+                <p class="seller">user3</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_이산수학책.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">이산수학책</p>
+                <p class="price">13000원</p>
+                <p class="seller">user4</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_자료구조.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">자료구조와 알고리즘책</p>
+                <p class="price">15000원</p>
+                <p class="seller">user5</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_칼퇴족책.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">sql기초 책</p>
+                <p class="price">5000원</p>
+                <p class="seller">user6</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/2_하버드책.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">하버드 새벽4시반</p>
+                <p class="price">10000원</p>
+                <p class="seller">user7</p>
+            </div>
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

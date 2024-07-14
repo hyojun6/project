@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부마장터</title>
+</head>
+<style>
+    .container {
+        width:100%;
+        margin: auto;
+    }
+    @media only screen and (min-width: 768px) {
+        container {
+            width: 50%;
+        }
+    }
+    #var {
+        margin-top: -8px;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        background-color: white;
+    }
+    #user_name {
+        font-weight: 500px;
+        margin-left: 650px;
+        float: left;
+        margin-top: 16px;
+    }
+
+    .pagelink {
+        font-weight: 500px;
+        color: black;
+        margin-left: 60px;
+        float: left;
+        margin-top: 16px;
+        text-decoration-line: none;
+    }
+    .pagelink:hover {
+        color: gray;
+    }
+    .pagelink_logo {
+        margin-top: 15px;
+        margin-left: 85px;
+        float: left;
+        width: 80px;
+    }
+
+    #see_outsourcing {
+        width: 100%;
+        height: 300px;
+        background-color: azure;
+    }
+    #sos {
+        margin-top: 40px;
+        margin-right: 400px;
+        float: right;
+        width: 300px;
+    }
+
+    #outsourcing_list
+    {
+        background-color: blanchedalmond;
+        margin: auto;
+        width: 76%;
+        height: 350px;
+    }
+
+    .line_1 {
+        margin-top: 25px;
+        background-color: beige;
+        margin-left: 2.5%;
+        width: 30%;
+        height: 300px;
+        float: left;
+        border-radius: 10%;
+    }
+    .list_img {
+        width: auto;
+        height: 90px;
+        margin: auto;
+        margin-top: 45px;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .title {
+        margin-left: 60px;
+        margin-top: 50px;
+        margin-bottom: 5px;
+        font-size: 25px;
+    }
+    .price {
+        margin-left: 60px;
+        margin-top: 5px;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .seller {
+        margin-left: 60px;
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+</style>
+
+<script>
+    window.onload = function() {
+        if(localStorage.getItem("check_login") == 1) {
+            let name = localStorage.getItem('user_name');
+            sessionStorage.setItem('user_name', name);
+            sessionStorage.setItem('check_login', 1);
+            document.getElementById('user_name').innerHTML = name + '님 환영합니다';
+            document.getElementById('login').innerHTML = '로그아웃';
+
+            if(localStorage.getItem('check_login_keep') != 1) {
+                localStorage.removeItem("check_login");
+            }
+        }
+    }
+</script>
+
+<body>
+    <div class="container">
+        <div id="var">
+            <a href="/Users/yanghyojun/Desktop/project/mainpage.html" height="5" width="10" target="_self">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/4_logo.png" alt="mainpage" class="pagelink_logo" style="margin-left: 150px;">
+            <a>
+            <a href="/Users/yanghyojun/Desktop/project/jooggo.html" class="pagelink">중고거래</a>
+            <a href="/Users/yanghyojun/Desktop/project/book.html" class="pagelink">책</a>
+            <a href="/Users/yanghyojun/Desktop/project/outsourcing.html" class="pagelink">외주</a>
+            <p id="user_name"></p>
+        </div>
+
+        <div id="see_outsourcing">
+            <br><br><br>
+            <img src="/Users/yanghyojun/Downloads/외주이미지.jpg" alt="sos" id="sos">
+            <p style="margin-left: 380px; font-size: 35px; margin-top: 15px; margin-bottom: 10px; line-height: 1.5; font-weight: 600;">할 게 많을 땐?<br>외주 구하기</p>
+            <p style="margin-left: 380px; font-size: 20px; margin-top: 10px;">시간을 절약하는<br>효과적인 방법.</p>
+        
+        </div>
+
+        <p style="text-align: center; font-size: 40px; font-weight: 500; margin-top: 50px;">외주의뢰</p>
+
+        <div id="outsourcing_list">
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/3_로그인기능의뢰.png" alt="jooggo1" class="list_img">
+                <p class="title">(JS)로그인기능</p>
+                <p class="price">5000원</p>
+                <p class="seller">양효준</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/3_데이터베이스.jpeg" alt="jooggo1" class="list_img">
+                <p class="title">(sql)데이터베이스 제작</p>
+                <p class="price">3000원</p>
+                <p class="seller">user1</p>
+            </div>
+
+            <div class="line_1">
+                <img src="/Users/yanghyojun/Desktop/vsc html/images/3_로고의뢰.png" alt="jooggo1" class="list_img">
+                <p class="title">(디자인)사이트로고</p>
+                <p class="price">가격</p>
+                <p class="seller">판매자</p>
+            </div>
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
